@@ -1,1 +1,31 @@
 # Recommender
+
+<h1> Neighborood recommender</h1>
+
+<h2>Business problem</h2>
+
+When you rent a place for vacations, or for an internship, in another city that you don't know, it can be difficult to choose a neighborood. 
+Some neighborood are quiet with parks, others have a lot of restaurants...
+
+The aim of this recommender is to provide a list of neighborood similar to a neighborood that you like, in targeted cities.
+
+You enter a neighborood in a city that you know and like, the name of the targeted city, and the recommender will provide to you neighborood 
+similar to the one that you enjoy in the targeted cities. It could help people to choose a place for vacations or living when they don't have 
+the possibility to visit the targeted city before (for example, interns, students in international exchanges...).
+
+<h2> Data </h2>
+
+For the scope of this projects, I will start with three cities: Paris, New York and Singapore.
+
+For Paris, I will generate the districts numbers. For Singapore and New York, I will use data from wikipedia:
+Singapore:https://en.wikipedia.org/wiki/Postal_codes_in_Singapore
+New York: https://fr.wikipedia.org/wiki/Liste_des_quartiers_de_New_York
+
+I will then use these names to localize each neighborood using geolocator.
+
+In order to assign features to each district, I will use the foursquare API (https://developer.foursquare.com/docs/places-api/) in order 
+to retrieve the places and their features for each neighborood. Foursquare provide venues (restaurants, parks, yoga studios etc... within a 
+determined radius around a point.
+
+I will then cluster neighboroods. The recommender will provide a list of neighboroods with the same cluster than the initial neighborood, 
+but in the targeted city. This list will help people to choose a neighborood similar to the one they love, but in another city that they don't know.
